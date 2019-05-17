@@ -43,7 +43,7 @@ int rtw_vrtl_carrier_sense = AUTO_VCS;
 int rtw_vcs_type = RTS_CTS;
 int rtw_rts_thresh = 2347;
 int rtw_frag_thresh = 2346;
-int rtw_preamble = PREAMBLE_LONG;/* long, short, auto */
+int rtw_preamble = PREAMBLE_AUTO;/* long, short, auto */
 int rtw_scan_mode = 1;/* active, passive */
 int rtw_adhoc_tx_pwr = 1;
 int rtw_soft_ap = 0;
@@ -86,7 +86,7 @@ MODULE_PARM_DESC(rtw_lps_level, "The default LPS level");
  * rtw_smart_ps = 1 => TX: pwr bit = 0, RX: PS_Poll
  * rtw_smart_ps = 2 => TX: pwr bit = 0, RX: NullData with pwr bit = 0
 */
-int rtw_smart_ps = 2;
+int rtw_smart_ps = 0;
 
 #ifdef CONFIG_WMMPS_STA
 /* WMMPS:
@@ -94,7 +94,7 @@ int rtw_smart_ps = 2;
  * rtw_smart_ps = 1 => Refer to Beacon's TIM Bitmap
  * rtw_smart_ps = 2 => Don't refer to Beacon's TIM Bitmap
 */
-int rtw_wmm_smart_ps = 2;
+int rtw_wmm_smart_ps = 1;
 #endif /* CONFIG_WMMPS_STA */
 
 int rtw_check_fw_ps = 1;
@@ -135,8 +135,8 @@ module_param(rtw_mp_customer_str, uint, 0644);
 MODULE_PARM_DESC(rtw_mp_customer_str, "Whether or not to enable customer str support on MP mode");
 #endif
 
-int rtw_software_encrypt = 0;
-int rtw_software_decrypt = 0;
+int rtw_software_encrypt = 1;
+int rtw_software_decrypt = 1;
 
 int rtw_acm_method = 0;/* 0:By SW 1:By HW. */
 
@@ -282,7 +282,7 @@ But Softap must be SHUT DOWN once P2P decide to set up connection and become a G
 #endif
 
 #ifdef CONFIG_BT_COEXIST
-int rtw_btcoex_enable = 2;
+int rtw_btcoex_enable = 0;
 module_param(rtw_btcoex_enable, int, 0644);
 MODULE_PARM_DESC(rtw_btcoex_enable, "BT co-existence on/off, 0:off, 1:on, 2:by efuse");
 
