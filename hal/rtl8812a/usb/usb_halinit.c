@@ -1360,6 +1360,7 @@ u32 rtl8812au_hal_init(PADAPTER Adapter)
 	systime init_start_time = rtw_get_current_time();
 
 
+	_8051Reset8812(Adapter);
 #ifdef DBG_HAL_INIT_PROFILING
 
 	enum HAL_INIT_STAGES {
