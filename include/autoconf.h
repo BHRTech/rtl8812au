@@ -136,6 +136,7 @@
 	/* #define	CONFIG_AUTO_AP_MODE */
 #endif
 
+#undef CONFIG_P2P
 #define CONFIG_P2P	0
 #ifdef CONFIG_P2P
 	#error P2P is enabled but CVE-2019-17666 is unpatched
